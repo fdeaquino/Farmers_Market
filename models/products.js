@@ -18,6 +18,13 @@ CustomElementRegistry.init(
                 len: [100]
             }
         },
+        product_description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [100]
+            }
+        },
         category_id: {
             type: DataTypes.INTEGER,
             references: {

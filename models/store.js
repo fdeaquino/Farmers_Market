@@ -18,6 +18,14 @@ store.init(
                 len: [100]
             }
         },
+        store_description: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [100]
+            }
+        },
+        
         user_id: {
             type: DataTypes.INTEGER,
             references: {
