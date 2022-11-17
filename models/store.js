@@ -25,11 +25,18 @@ store.init(
                 len: [100]
             }
         },
-        
+
         user_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'user',
+                key: 'id'
+            }
+        },
+        category_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'categories',
                 key: 'id'
             }
         }
