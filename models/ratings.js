@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 
 class ratings extends Model {}
 
@@ -12,10 +12,10 @@ ratings .init(
             autoIncrement: true
         },
         rating: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            validate: {
-                len: [100]
+            type: INTEGER,
+            valid: {
+                min: 1,
+                max: 5
             }
         },
         user_id: {
@@ -25,14 +25,15 @@ ratings .init(
                 key: 'id'
             }
         },
-        product_id: {
+        store_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'products',
+                model: 'store',
                 key: 'id'
             }
         }
     },
+    
     {
         sequelize,
         timestamps: true,
