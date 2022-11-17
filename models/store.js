@@ -51,3 +51,4 @@ Store.init(
     }
 );
 
+module.exports = Store;
