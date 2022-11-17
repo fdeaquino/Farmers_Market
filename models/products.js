@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class products extends Model {}
+class Products extends Model {}
 
-CustomElementRegistry.init(
+Products.init(
     {
         id: {
             type: DataTypes.INTEGER,
