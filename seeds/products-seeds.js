@@ -1,6 +1,6 @@
-const { Categories } = require('../models');
+const { Products } = require('../models');
 
-const categoriesdata = [
+const productsdata = [
   {
         product_name: 'Spinach',
         product_description: 'Fresh Spinach', 

@@ -1,5 +1,3 @@
-
-
     const { Store } = require('../models');
 
     const storedata = [

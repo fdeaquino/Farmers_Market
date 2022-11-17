@@ -1,14 +1,7 @@
 
+const { Ratings } = require('../models');
 
-rating: 
-user_id: 
-store_id:
-
-
-
-const { Store } = require('../models');
-
-const storedata = [
+const ratingsdata = [
     {
         rating: 3,
         user_id: 2,
