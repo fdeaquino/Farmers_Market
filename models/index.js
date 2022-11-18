@@ -1,3 +1,103 @@
 const User = require('./User');
+const Product = require('./Product');               // Import the Products model
+const Comment = require('./Comment');               // Import the Comment model
+const Category = require('./Category');
+const Store = require('./Store');
+const CategoryStore = require('./Category_Store');
+const Rating = require('./Rating');
 
-module.exports = { User };
+User.hasMany(
+    Store,                              // A User can have many Stores
+    {
+        foreignKey: 'user_id'
+    });
+
+Store.belongsTo(
+    User,                               // A Store belongs to a User
+    {
+        foreignKey: 'user_id'
+    });
+
+Store.hasMany(
+    Product,
+    {                                   // A Store can have many Product
+        foreignKey: 'store_id'
+    });
+
+Product.belongsTo(
+    Store,
+    {                                   // A Product belongs to a Store
+        foreignKey: 'store_id'
+    });
+
+Store.hasMany(
+    Rating,
+    {                                   // A Store can have many Ratings
+        foreignKey: 'store_id'
+    });
+
+Rating.belongsTo(
+    Store,
+    {                                   // A Rating belongs to a Store
+        foreignKey: 'store_id',
+    });
+
+Rating.belongsTo(
+    User,
+    {                                   // A Rating belongs to a User
+        foreignKey: 'user_id',
+    });
+
+User.hasMany(
+    Rating,
+    {                                   // A User can have many Comments
+        foreignKey: 'user_id'
+    });
+
+Comment.belongsTo(
+    Store,
+    {                                   // A Comment belongs to a Store
+        foreignKey: 'store_id'
+    });
+
+Store.hasMany(
+    Comment,
+    {                                   // A Store can have many Comments
+        foreignKey: 'store_id'
+    });
+
+// Category.hasMany(
+//     Product,                           // A Category can have many Product
+//     {
+//         foreignKey: 'category_id',
+//         onDelete: 'CASCADE'
+//     });
+
+// Product.belongsTo(
+//     Category,                         // A Product belongs to a Category
+//     {
+//         foreignKey: 'category_id'
+//     });
+// Many to Many Associations
+Category.belongsToMany(
+    Store,                              // A Category can have many Stores
+    {
+        through: CategoryStore,
+        foreignKey: 'category_id'
+    });
+
+Store.belongsToMany(
+    Category,                         // A Store belongs to a Category
+    {
+        through: CategoryStore,
+        foreignKey: 'store_id'
+    });
+
+Store.hasMany(
+    Category,
+    {                                   // A Store can have many CategoryStores
+        foreignKey: 'store_id'
+    });
+
+
+module.exports = { User, Category, Store, CategoryStore, Rating };
