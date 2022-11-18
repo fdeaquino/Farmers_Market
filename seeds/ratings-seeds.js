@@ -1,5 +1,5 @@
 
-const { Ratings } = require('../models');
+const  {Rating}  = require('../models');
 
 const ratingsdata = [
     {
@@ -38,3 +38,7 @@ const ratingsdata = [
         store_id:1
     }
 ];
+
+const seedRatings = () => Rating.bulkCreate(ratingsdata);
+
+module.exports = seedRatings;

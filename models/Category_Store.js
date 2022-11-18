@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class Products extends Model {}
+class CategoryStore extends Model {}
 
-Products.init(
+CategoryStore.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,31 +11,17 @@ Products.init(
             primaryKey: true,
             autoIncrement: true
         },
-        product_name: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [100]
-            }
-        },
-        product_description: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [100]
+        store_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'store',
+                key: 'id'
             }
         },
         category_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'categories',
-                key: 'id'
-            }
-        },
-        store_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'store',
+                model: 'category',
                 key: 'id'
             }
         }
@@ -45,7 +31,8 @@ Products.init(
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'products',
-        updatedAt: false
+        modelName: 'category_store'
     }
 );
+
+module.exports = CategoryStore;

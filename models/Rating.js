@@ -1,9 +1,9 @@
 const sequelize = require('../config/connection');
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, INTEGER } = require('sequelize');
 
-class CategoriesStores extends Model {}
+class Rating extends Model {}
 
-CategoriesStores.init(
+Rating.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -11,29 +11,29 @@ CategoriesStores.init(
             primaryKey: true,
             autoIncrement: true
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
         store_id: {
             type: DataTypes.INTEGER,
             references: {
                 model: 'store',
                 key: 'id'
             }
-        },
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'categories',
-                key: 'id'
-            }
         }
     },
+    
     {
         sequelize,
         timestamps: true,
         freezeTableName: true,
         underscored: true,
-        modelName: 'categories_stores',
-        updatedAt: false
+        modelName: 'rating'
     }
 );
 
-module.exports = CategoriesStores;
+module.exports = Rating;

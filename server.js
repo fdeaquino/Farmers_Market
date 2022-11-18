@@ -1,10 +1,11 @@
 const express = require('express');                                             // Import the Express.js module
 const expressHandlebars = require('express-handlebars');                        // Import the express-handlebars module
 const path = require('path');                                                   // Import the path module
-const routes = require('./controllers');                                        // Import the routes
+// const routes = require('./controllers');                                        // Import the routes
 const sequelize = require('./config/connection');                               // Import the connection to the database
-const sequelizeStore = require('connect-session-sequelize')(session.Store);     // Import the SequelizeStore constructor from the connect-session-sequelize package
 const expressSession = require('express-session');                              // Import the express-session module
+const sequelizeStore = require('connect-session-sequelize')(expressSession.Store);     // Import the SequelizeStore constructor from the connect-session-sequelize package
+
 
 const app = express();                                                          // Create the Express.js server
 const PORT = process.env.PORT || 3001;                                          // Set the port
@@ -30,7 +31,7 @@ app.use(express.json());                                                        
 app.use(express.urlencoded({ extended: true }));                                 // Parse URL-encoded bodies
 app.use(express.static(path.join(__dirname, 'public')));                         // Serve static files from the public folder
 app.use(expressSession(sess));                                                   // Use the session middleware
-app.use(routes);                                                                 // Use the routes
+//app.use(routes);                                                                 // Use the routes
 
 
 sequelize.sync({ force: false }).then(() => {                                    // Sync the models to the database 

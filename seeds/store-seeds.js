@@ -23,4 +23,5 @@
 
     const seedStore = () => Store.bulkCreate(storedata);
 
+    module.exports = seedStore;
 
