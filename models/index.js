@@ -100,4 +100,4 @@ Store.hasMany(
     });
 
 
-module.exports = { User, Category, Store, CategoryStore, Rating };
+module.exports = { User, Category, Store, CategoryStore, Rating, Product, Comment };
