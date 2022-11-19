@@ -38,6 +38,6 @@ app.engine('handlebars', handleBars.engine);                                    
 app.set('view engine', 'handlebars');                                            // Set the Express.js app to use the handlebars view engine
 
 
-sequelize.sync({ force: true }).then(() => {                                    // Sync the models to the database 
+sequelize.sync({ force: false }).then(() => {                                    // Sync the models to the database 
     app.listen(PORT, () => console.log('Now listening'));                        // Start the Express.js server
 });
