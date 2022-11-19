@@ -3,7 +3,7 @@ const Product = require('./Product');               // Import the Products model
 const Comment = require('./Comment');               // Import the Comment model
 const Category = require('./Category');
 const Store = require('./Store');
-const CategoryStore = require('./Category_Store');
+const StoreCategory = require('./StoreCategory');
 const Rating = require('./Rating');
 
 User.hasMany(
@@ -82,22 +82,22 @@ Store.hasMany(
 Category.belongsToMany(
     Store,                              // A Category can have many Stores
     {
-        through: CategoryStore,
+        through: StoreCategory,
         foreignKey: 'category_id'
     });
 
 Store.belongsToMany(
     Category,                         // A Store belongs to a Category
     {
-        through: CategoryStore,
+        through: StoreCategory,
         foreignKey: 'store_id'
     });
 
 Store.hasMany(
     Category,
-    {                                   // A Store can have many CategoryStores
+    {                                   // A Store can have many Category
         foreignKey: 'store_id'
     });
 
 
-module.exports = { User, Category, Store, CategoryStore, Rating, Product, Comment };
+module.exports = { User, Category, Store, StoreCategory, Rating, Product, Comment };

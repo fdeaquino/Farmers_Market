@@ -34,7 +34,7 @@ User.init(
         },
         // Is the User a Vendor? 
         // TODO: Check the code below
-        vendor: {
+        is_vendor: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
             defaultValue: 0
