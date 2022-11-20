@@ -81,6 +81,14 @@ router.get('/:id', (req, res) => {
 
 // create a new store
 router.post('/', (req, res) => {
+    /* req.body should look like this
+    {
+        "store_name": "Veggie Candle",
+        "store_description": "Veggies, candles, and vegetable themed candles",
+        "user_id": 7,
+        "categoryIds": [1,7]
+      }
+    */
     Store.create(req.body)
         .then((store) => {
             if (req.body.categoryIds.length) {
@@ -99,5 +107,8 @@ router.post('/', (req, res) => {
             console.log(err);
             res.status(400).json(err);
         });
-})
+});
+
+// update an existing store
+
 module.exports = router;
