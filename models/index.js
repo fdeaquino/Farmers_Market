@@ -21,10 +21,10 @@ User.hasMany(Comment,
         foreignKey: 'user_id'
     });
 
-Store.hasMany(Category,
-    {                                   // A Store can have many Category
-        foreignKey: 'store_id'
-    });
+// Store.hasMany(Category,
+//     {                                   // A Store can have many Category
+//         foreignKey: 'store_id'
+//     });
 
 Store.hasMany(Product,
     {                                   // A Store can have many Product

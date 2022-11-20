@@ -25,13 +25,6 @@ Store.init(
                 model: 'user',
                 key: 'id'
             }
-        },
-        category_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'category',
-                key: 'id'
-            }
         }
     },
     {
