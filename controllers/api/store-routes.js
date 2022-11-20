@@ -110,5 +110,67 @@ router.post('/', (req, res) => {
 });
 
 // update an existing store
+router.put('/:id', (req, res) => {
+    Store.update(req.body, {
+        // {
+
+        // },
+        where: {
+            id: req.params.id
+        }
+    })
+        .then((store) => {
+            // find all associated categories from StoreCategory
+            return StoreCategory.findAll({ where: { store_id: req.params.id } });
+        })
+        .then((storeCategories) => {
+            // get list of current category_ids
+            const storeCategoryIds = storeCategories.map(({ category_id }) => category_id);
+            // create filtered list of new category_ids
+            const newStoreCategories = req.body.categoryIds
+                .filter((category_id) => !storeCategoryIds.includes(category_id))
+                .map((category_id) => {
+                    return {
+                        store_id: req.params.id,
+                        category_id
+                    };
+                });
+            // determine which categories to remove
+            const categoryIdsToRemove = storeCategories
+                .filter(({ category_id }) => !req.body.categoryIds.includes(category_id))
+                .map(({ id }) => id);
+
+            // run both actions: delete associations that are no longer needed and add new associations
+            return Promise.all([
+                StoreCategory.destroy({ where: { id: categoryIdsToRemove } }),
+                StoreCategory.bulkCreate(newStoreCategories)
+            ]);
+        })
+        .then((updatedStoreCategories) => res.json(updatedStoreCategories))
+        .catch((err) => {
+            res.status(400).json(err);
+        });
+
+});
+
+// delete store by id
+router.delete('/:id', (req, res) => {
+    Store.destroy({
+        where: {
+            id: req.params.id
+        }
+    })
+        .then(dbStoreData => {
+            if (!dbStoreData) {
+                res.status(404).json({ message: 'No store found with this id' });
+                return;
+            }
+            res.json(dbStoreData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+})
 
 module.exports = router;
