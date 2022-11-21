@@ -1,0 +1,229 @@
+@import url("https://fonts/googleapis.com/css?family=Roboto:400,800italic,500,800|Josefin+Slab:600italic,400,600");
+
+/* * {
+    box-sizing: border-box;
+} */
+
+:root {
+    /* font colors */
+    --primary: #019D78;
+    --secondary: #019D7833;
+    --tertiary: #F5F5F5;
+    --quaternary: #D9D9D9;
+
+    /* font sizes */
+    --font-size-xs: 15px;
+    --font-size-s: 17px;
+    --font-size-m: 16px;
+    --font-size-xxl: 32px;
+    --font-size-xxxl: 56px;
+    --font-size-m2: 18px;
+    --font-size-12: 24px;
+    --font-size-x12: 36px;
+    --font-size-xx12: 48px;
+
+    /* font families */
+    --font-family-josefin_slab: "Josefin Slab";
+    --font-family-roboto: "Roboto";
+}
+
+body {
+    display: block;
+}
+
+/* font classes start */
+.roboto-normal-black-16px {
+    color: black;
+    font-family: var(--font-family-roboto);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-normal-white-16px {
+    color: white;
+    font-family: var(--font-family-roboto);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.roboto-medium-white-16px {
+    color: white;
+    font-family: var(--font-family-roboto);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    font-style: normal;
+}
+/* font classes end */
+
+/* Header Nav Bar Styles Start */
+.header-nav {
+    align-items: stretch;
+    background-color: black;
+    border: 1px none;
+    display: flex;
+    height: 5%;
+    left: 0;
+    padding: 15px 160px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-wrapper {
+    align-items: center;
+    border: 1px none;
+    display: flex;
+    gap: 75px;
+    width: 75%;
+}
+
+.nav-links-wrapper {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    gap: 26px;
+    width: 17%;
+}
+
+.about-us
+.home
+.contact-us {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    width: fit-content;
+}
+
+.frame-1 {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    gap: 27px;
+    width: fit-content;
+}
+
+.green-btn {
+    align-items: flex-start;
+    background-color: var(--primary);
+    border: 1px none;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+    padding: 16px 24px;
+    width: fit-content;
+    margin-top: -1px;
+    line-height: normal;
+    letter-spacing: 0;
+    font-size: 16px;
+}
+
+.farmers-market {
+    left: 0;
+    letter-spacing: 2.24px;
+    line-height: normal;
+    position: absolute;
+    top: -3px;
+    /* add a font size here */
+}
+
+.brand-logo {
+    border: 1px none;
+    height: 15px;
+    min-width: 36%;
+    overflow: hidden;
+    position: relative;
+}
+/* Header Nav Bar Styles End */
+
+/* Hero Styles Start */
+.hero {
+    /* align-items: flex-end; */
+    display: flex;
+    border: 1px solid black;
+    height: 25%;
+    left: 15%;
+    right: 15%;
+    position: absolute;
+    /* top: auto; */
+    width: 55%;
+}
+
+.overlap-hero-group {
+    align-items: flex-start;
+    background-image: url(../images/fruits-veggies.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    display: flex;
+    height: 529;
+    /* try changing to auto */
+    min-width: 78%;
+    padding: 174px 191px;
+}
+
+.one-liner {
+    align-items: flex-start;
+    background-color: #000000e6;
+    display: flex;
+    height: 89px;
+    padding: 11px 202px;
+    width: 55%;
+}
+/* Hero Styles End */
+
+
+/* Footer Nav Bar Styles Start */
+footer {
+    align-items: flex-start;
+    background-color: black;
+    border: 1px none;
+    display: flex;
+    height: 82px;
+    margin-top: 100%;
+    padding: 26px 160px;
+    width: 100%;
+}
+
+.footer-nav {
+    align-items: center;
+    border: 1px none;
+    display: flex;
+    /* TODO: edit the gap */
+    gap: 369px;
+    height: 22px;
+    /* TODO: edit the width */
+    width: 100%;
+    position: absolute;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#made-with-love {
+    left: 0;
+    letter-spacing: 2.24px;
+    line-height: normal;
+    position: relative;
+    top: -1px;
+    width: 400px;
+    color: white;
+}
+
+.footer-nav-links-wrapper {
+    align-items: flex-start;
+    border: 1px none;
+    display: flex;
+    gap: 26px;
+    width: 241px;
+    justify-content: flex-end;
+}
+
+.my-footer-links {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: -1px;
+    width: fit-content;
+}
+/* Footer Nav Bar Styles End */
