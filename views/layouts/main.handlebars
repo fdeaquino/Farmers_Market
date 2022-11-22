@@ -9,61 +9,54 @@
 </head>
 
 <body>
+    <!-- header nav bar -->
     <header>
-        <div class="header-nav">
-            <div class="nav-wrapper">
-                <div class="brand-logo">
-                    <div class="farmers-market roboto-medium-white-16px">
-                        FARMERS MARKET
-                    </div>
-                </div>
-                <div class="nav-links-wrapper">
-                    <div class="home roboto-normal-white-16px">Home</div>
-                    <div class="about-us roboto-normal-white-16px">About Us</div>
-                    <div class="contact-us roboto-normal-white-16px">Contact Us</div>
-                </div>
-                <div class="frame-1">
-                    <button class="green-btn roboto-normal-white-16px">Login</button>
-                    <button class="green-btn roboto-normal-white-16px">Sign Up</button>
-                </div>
+        <!-- logo -->
+        <h1 class="logo">FARMERS MARKET</h1>
+        <!-- nav links -->
+        <div id="header-right-items">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+            <!-- button -->
+            <div id="nav-btns">
+                <a class="login-button" href="#"><button>Login</button></a>
+                <a class="login-button" href="#"><button>Sign Up</button></a>
+                <a class="login-button" href="#"><button>Logout</button></a>
             </div>
         </div>
-    </header>
 
+    </header>
+    
+    <!-- hero -->
     <section id="hero">
         <div class="hero">
             <div class="overlap-hero-group">
-                <div class="one-liner">
-                    <div id="buy-local-text valign-text-middle">Buy Local.<br>Support Small Businesses.</div>
+                <div id="one-liner">
+                    <div class="buy-local-text valign-text-middle">Buy Local.<br>Support Small Businesses.</div>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <main>
-        {{!-- <div class="hero">
-            <div id="hero-img">
-                <img id="hero-img" src="/images/fruits-veggies.png" alt="Vendors and customers at the farmer's market.">
-            </div>
-        </div>
-        <div class="our-vendors">
-            {{{ body }}}
-        </div>
-         --}}
-    </main>
-
+    <!-- footer -->
     <footer>
-        <div class="footer-nav">
-            <div>
-                <p id="made-with-love" class="roboto-medium-white-16px">Made with ❤️ by Alecia, Ryan and Fidel</p>
-            </div>
-            <div class="footer-nav-links-wrapper">
-                <div class="my-footer-links roboto-normal-white-16px">FAQ</div>
-                <div class="my-footer-links roboto-normal-white-16px">Legal</div>
-                <div class="my-footer-links roboto-normal-white-16px">Social Media</div>
-            </div>
+        <!-- created by info -->
+        <h3>Made with ❤️ by Alecia, Ryan and Fidel</h3>
+        <div id="footer-right-items">
+            <nav>
+                <ul class="footer-nav-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Social Media</a></li>
+                </ul>
+            </nav>
         </div>
+
     </footer>
 
 </body>
