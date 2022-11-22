@@ -41,6 +41,20 @@ router.get('/:id', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+});
+
+// POST add new product
+router.post('/', (req, res) => {
+    Product.create({
+        product_name: req.body.product_name,
+        product_description: req.body.product_description,
+        store_id: req.body.store_id
+    })
+        .then(dbProductData => res.json(dbProductData))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 })
 
 module.exports = router;
