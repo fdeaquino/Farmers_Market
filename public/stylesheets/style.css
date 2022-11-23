@@ -361,8 +361,7 @@ button:hover {
 /* =======END PRODUCTS Page Styles======= */
 
 
-
-/* =======START CREATE STORE Section Styles======= */
+/* =======START CREATE STORE/PRODUCT Section Styles======= */
 .form-to-add {
     background-color: rgba(92, 92, 92, 0.414);
     padding: 5em;
@@ -378,7 +377,7 @@ label {
     font-weight: 500;
     font-size: clamp(.5em, .25em + 10vw, 1em);
 }
-/* =======END CREATE STORE Section Styles======= */
+/* =======END CREATE STORE/PRODUCT Section Styles======= */
 
 
 
