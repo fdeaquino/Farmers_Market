@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Store, User, Comment, Category, StoreCategory, Product } = require('../../models');
+const { Store, User, Comment, Category, StoreCategory, Product, Rating } = require('../../models');
 
 // get all stores
 router.get('/', (req, res) => {
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             {
-                model:Product,
+                model: Product,
                 attributes: ['product_name']
             },
             {
@@ -68,7 +68,7 @@ router.get('/:id', (req, res) => {
                 attributes: ['username']
             },
             {
-                model:Product,
+                model: Product,
                 attributes: ['product_name']
             },
             {
@@ -117,6 +117,18 @@ router.post('/', (req, res) => {
         });
 });
 
+router.put('/upvote', (req, res) => {
+    if (req.session) {
+        // pass session id along with all destructured properties on req.body
+        Store.upvote({ ...req.body, user_id: req.session.user_id }, { Rating, Comment, User })
+            .then(updatedRatingData => res.json(updatedRatingData))
+            .catch(err => {
+                console.log(err);
+                res.status(500).json(err);
+            });
+    }
+})
+
 // update an existing store
 router.put('/:id', (req, res) => {
     Store.update(req.body, {
@@ -160,6 +172,7 @@ router.put('/:id', (req, res) => {
         });
 
 });
+
 
 // delete store by id
 router.delete('/:id', (req, res) => {
