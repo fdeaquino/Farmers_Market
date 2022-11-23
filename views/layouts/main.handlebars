@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Farmer's Market</title>
-        {{!-- link to boostrap --}}
+    {{!-- link to boostrap --}}
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
@@ -15,7 +15,7 @@
     {{!-- TODO: Need to hide buttons if logged in/logged out --}}
     <header>
         <!-- logo -->
-        <h1 class="logo">FARMERS MARKET</h1>
+        <h1 class="logo"><a href="/">FARMERS MARKET</a></h1>
         <!-- nav links -->
         <div id="header-right-items">
             <nav>
@@ -27,14 +27,17 @@
             </nav>
             <!-- button -->
             <div id="nav-btns">
-                <a class="login-button" href="#"><button>Login</button></a>
-                <a class="login-button" href="#"><button>Sign Up</button></a>
+                <a class="login-button" href="/login"><button>Login</button></a>
+                <a class="login-button" href="/sign-up"><button>Sign Up</button></a>
                 <a class="login-button" href="#"><button>Logout</button></a>
             </div>
         </div>
 
     </header>
-    
+
+    <main>
+        {{{ body }}}
+    </main>
     <!-- footer -->
     <footer>
         <!-- created by info -->
