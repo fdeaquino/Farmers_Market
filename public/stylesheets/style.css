@@ -22,6 +22,8 @@ body {
     display: block;
 }
 
+
+
 /* =======START Header Styles======= */
 h1,
 li,
@@ -100,7 +102,10 @@ button:hover {
 
 /* =======END Header Styles======= */
 
+
+
 /* =======START HOMEPAGE STYLES======= */
+
 
     /* ===START Hero Section Styles=== */
     #hero {
@@ -135,6 +140,7 @@ button:hover {
     }
 
     /* ===END Hero Section Styles=== */
+
 
     /* ===START CTA Section Styles=== */
     .light-green-container {
@@ -197,6 +203,7 @@ button:hover {
 
     /* ===END CTA Section Styles=== */
 
+
     /* ===START Featured Vendors Styles=== */
     #light-grey-container {
         display: flex;
@@ -252,6 +259,7 @@ button:hover {
 
     /* ===END Featured Vendors Styles=== */
 
+
     /* TODO: Need Help moving the circles to the middle, and moving the featured products titile to the center */
     /* ===START Featured Products Styles=== */
     h2 {
@@ -278,7 +286,10 @@ button:hover {
 
     /* ===END Featured Products Styles=== */
 
+
 /* =======END HOMEPAGE STYLES======= */
+
+
 
 /* =======START STORES Page Styles======= */
 #stores-title {
@@ -341,11 +352,35 @@ button:hover {
 }
 /* =======END STORES Page Styles======= */
 
+
+
 /* =======START PRODUCTS Page Styles======= */
 .description {
     margin: 10px;
 }
 /* =======END PRODUCTS Page Styles======= */
+
+
+
+/* =======START CREATE STORE Section Styles======= */
+.form-to-add {
+    background-color: rgba(92, 92, 92, 0.414);
+    padding: 5em;
+    border-radius: 24px;
+    width: auto;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+label {
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: clamp(.5em, .25em + 10vw, 1em);
+}
+/* =======END CREATE STORE Section Styles======= */
+
+
 
 /* =======START Footer Section Styles======= */
 footer {
@@ -386,6 +421,8 @@ h3 {
 }
 
 /* =======END Footer Section Styles======= */
+
+
 
 /* =======START Media Queries======= */
 @media(max-width: 600px) {
