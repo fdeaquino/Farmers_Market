@@ -1,7 +1,30 @@
 const sequelize = require('../config/connection');
 const { Model, DataTypes } = require('sequelize');
 
-class Store extends Model {}
+class Store extends Model {
+    static upvote(body, models) {
+        return models.Rating.create({
+            user_id: body.user_id,
+            store_id: body.store_id
+        }).then((data) => {
+            console.log(data)
+            return Store.findOne({
+                where: {
+                    id: body.store_id
+                },
+                attributes: [
+                    'id',
+                    'store_name',
+                    'store_description',
+                    [
+                    sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'),
+                    'vote_count'
+                    ]
+                ]
+            });
+        });
+    }
+}
 
 Store.init(
     {
@@ -33,7 +56,7 @@ Store.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'store'
-    }   
+    }
 );
 
 module.exports = Store;
