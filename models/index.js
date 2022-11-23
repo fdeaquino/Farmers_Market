@@ -21,10 +21,10 @@ User.hasMany(Comment,
         foreignKey: 'user_id'
     });
 
-Store.hasMany(Category,
-    {                                   // A Store can have many Category
-        foreignKey: 'store_id'
-    });
+// Store.hasMany(Category,
+//     {                                   // A Store can have many Category
+//         foreignKey: 'store_id'
+//     });
 
 Store.hasMany(Product,
     {                                   // A Store can have many Product
@@ -71,19 +71,6 @@ Comment.belongsTo(User,
         foreignKey: 'user_id',
     })
 
-// Category.hasMany(
-//     Product,                           // A Category can have many Product
-//     {
-//         foreignKey: 'category_id',
-//         onDelete: 'CASCADE'
-//     });
-
-// Product.belongsTo(
-//     Category,                         // A Product belongs to a Category
-//     {
-//         foreignKey: 'category_id'
-//     });
-
 // Many to Many Associations
 Category.belongsToMany(Store,                              // A Category can have many Stores
     {
@@ -97,6 +84,16 @@ Store.belongsToMany(Category,                         // A Store belongs to a Ca
         foreignKey: 'store_id'
     });
 
+User.belongsToMany(Store, {
+    through:Rating,
+    as:'liked_stores',
+    foreignKey:'user_id'
+});
 
+Store.belongsToMany(User, {
+    through:Rating,
+    as:'liked_stores',
+    foreignKey:'store_id'
+});
 
 module.exports = { User, Category, Store, StoreCategory, Rating, Product, Comment };
