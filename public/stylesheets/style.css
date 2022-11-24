@@ -151,7 +151,7 @@ button:hover {
         padding: 0px 10% 0px 10%;
         word-wrap: break-word;
         background-color: rgba(0, 157, 119, 0.3);
-        height: 30em;
+        /* height: 30em; */
         background-size: cover;
     }
 
@@ -160,20 +160,25 @@ button:hover {
         background-color: var(--primary);
         border: 1px;
         border-radius: 24px;
-        height: 40%;
         width: 80%;
-        top: 3.5em;
-        left: 10%;
+        margin-top: 3.5em;
+        margin-bottom: 3.5em;
         transform: (-50%, -50%);
+        justify-content: center;
     }
 
     .cta-items {
-        display: flexbox;
+        display: flex;
         align-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
     }
 
     .cta-items p {
-        margin: 3em;
+        margin: 1em;
+        margin-bottom: auto;
         font-family: "Roboto Condensed", sans-serif;
         font-size: clamp(.5em, .25em + 10vw, 1em);
         display: flex;
@@ -185,8 +190,9 @@ button:hover {
         display: flex;
         gap: 1em;
         width: 100%;
-        margin: -30px auto;
-        padding-left: 10.5em;
+        margin: auto;
+        margin-bottom: 1em;
+        justify-content: center;
     }
 
     #button-container a button {
@@ -431,10 +437,11 @@ h3 {
     }
 
     #button-container {
-        display: inline-grid;
+        display: flex;
+        align-items: center;
         row-gap: 1em;
         width: fit-content;
-        margin: 10px 44px;
+        margin: .2em 0 .4em 0;
         padding: 0;
     }
 
