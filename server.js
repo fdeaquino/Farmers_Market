@@ -9,10 +9,8 @@ const expressSession = require('express-session');                              
 const sequelizeStore = require('connect-session-sequelize')(expressSession.Store);     // Import the SequelizeStore constructor from the connect-session-sequelize package
 
 
-
 const sess = {                                                                  // Create a session object
-    secret
-        : 'Super secret secret',                                                    // Set the secret
+    secret: 'Super secret secret',                                                    // Set the secret
     cookie: {                                                                   // Set the cookie options
         maxAge: 3600000                                                         // Set the cookie to expire in 1 hour
     },
@@ -27,7 +25,6 @@ const app = express();                                                          
 const PORT = process.env.PORT || 3001;                                          // Set the port
 
 app.use(expressSession(sess));                                                   // Use the session middleware
-
 app.use(express.json());                                                         // Parse JSON body
 app.use(express.urlencoded({ extended: true }));                                 // Parse URL-encoded bodies
 app.use(express.static(path.join(__dirname, 'public')));                         // Serve static files from the public folder

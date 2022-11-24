@@ -27,9 +27,12 @@
             </nav>
             <!-- button -->
             <div id="nav-btns">
+                {{#if loggedIn}}
+                <a class="login-button" href="#"><button>Logout</button></a>
+                {{else}}
                 <a class="login-button" href="/login"><button>Login</button></a>
                 <a class="login-button" href="/sign-up"><button>Sign Up</button></a>
-                <a class="login-button" href="#"><button>Logout</button></a>
+                {{/if}}
             </div>
         </div>
 
