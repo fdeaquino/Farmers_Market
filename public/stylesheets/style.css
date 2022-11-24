@@ -22,7 +22,9 @@ body {
     display: block;
 }
 
-/* START Header Nav Bar Styles */
+
+
+/* =======START Header Styles======= */
 h1,
 li,
 a,
@@ -98,187 +100,202 @@ button:hover {
     background-color: rgba(1, 157, 120, 0.8);
 }
 
-/* END Header Nav Bar Styles */
+/* =======END Header Styles======= */
 
-/* START HOMEPAGE STYLES  */
 
-/* START Hero Section Styles */
-#hero {
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: auto;
-    padding: 0px 10% 0px 10%;
-    word-wrap: break-word;
-    background-image: url(../images/fruits-veggies.png);
-    height: 30rem;
-    background-size: cover;
-}
 
-#one-liner {
-    align-items: flex-start;
-    background-color: #000000c2;
-    padding: 1em 2em;
-    height: auto;
-    width: auto;
-    position: absolute;
-    top: 20rem;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+/* =======START HOMEPAGE STYLES======= */
 
-.buy-local-text {
-    color: white;
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: clamp(.2em, .5em + 10vw, 1.75em);
-    text-align: center;
-}
 
-/* END Hero Section Styles */
+    /* ===START Hero Section Styles=== */
+    #hero {
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        padding: 0px 10% 0px 10%;
+        word-wrap: break-word;
+        background-image: url(../images/fruits-veggies.png);
+        height: 30rem;
+        background-size: cover;
+    }
 
-/* START CTA Section Styles */
-.light-green-container {
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: auto;
-    padding: 0px 10% 0px 10%;
-    word-wrap: break-word;
-    background-color: rgba(0, 157, 119, 0.3);
-    height: 30em;
-    background-size: cover;
-}
+    #one-liner {
+        align-items: flex-start;
+        background-color: #000000c2;
+        padding: 1em 2em;
+        height: auto;
+        width: auto;
+        position: absolute;
+        top: 20rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-#dark-green-container {
-    position: relative;
-    background-color: var(--primary);
-    border: 1px;
-    border-radius: 24px;
-    height: 75%;
-    width: 80%;
-    top: 3.5em;
-    left: 10%;
-    transform: (-50%, -50%);
-}
+    .buy-local-text {
+        color: white;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: clamp(.2em, .5em + 10vw, 1.75em);
+        text-align: center;
+    }
 
-.cta-items {
-    display: flexbox;
-}
+    /* ===END Hero Section Styles=== */
 
-.cta-items p {
-    margin: 3em;
-    font-family: "Roboto Condensed", sans-serif;
-    font-size: clamp(1em, .5em + 10vw, 1.4em);
-    display: block;
-    text-align: center;
-}
 
-#button-container {
-    align-items: center;
-    display: flex;
-    gap: 4em;
-    width: fit-content;
-    margin: 10px auto;
-    padding: 0;
-}
+    /* ===START CTA Section Styles=== */
+    .light-green-container {
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        padding: 0px 10% 0px 10%;
+        word-wrap: break-word;
+        background-color: rgba(0, 157, 119, 0.3);
+        /* height: 30em; */
+        background-size: cover;
+    }
 
-#button-container a button {
-    width: 100%;
-    align-items: center;
-    background-color: black;
-}
+    #dark-green-container {
+        position: relative;
+        background-color: var(--primary);
+        border: 1px;
+        border-radius: 24px;
+        width: 80%;
+        margin-top: 3.5em;
+        margin-bottom: 3.5em;
+        transform: (-50%, -50%);
+        justify-content: center;
+    }
 
-/* TODO: make these buttons bigger/wider; current style doesn't work */
-#login-button,
-#sign-up-button {
-    font-size: xx-large;
-}
+    .cta-items {
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 
-/* END CTA Section Styles */
+    .cta-items p {
+        margin: 1em;
+        margin-bottom: auto;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: clamp(.5em, .25em + 10vw, 1em);
+        display: flex;
+        text-align: center;
+    }
 
-/* START Featured VENDORS Section Styles */
-#light-grey-container {
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: auto;
-    padding: 7em 5% 7em 5%;
-    word-wrap: break-word;
-    background-color: var(--tertiary);
-    height: 30em;
-    background-size: cover;
-}
+    #button-container {
+        align-items: center;
+        display: flex;
+        gap: 1em;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 1em;
+        justify-content: center;
+    }
 
-.feat-ven {
-    display: contents;
-}
+    #button-container a button {
+        width: 100%;
+        align-items: center;
+        background-color: black;
+    }
 
-.feat-ven-description-left {
-    display: flex;
-    width: auto;
-    height: 15em;
-    padding-left: 5em;
-    align-items: center;
-    text-align: justify;
-}
+    /* TODO: make these buttons bigger/wider; current style doesn't work */
+    #login-button,
+    #sign-up-button {
+        font-size: xx-large;
+    }
 
-.feat-ven-photo {
-    width: 16em;
-    height: 16em;
-    border-radius: 24px;
-}
+    /* ===END CTA Section Styles=== */
 
-#dark-grey-container {
-    display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
-    width: auto;
-    padding: 7em 5% 7em 5%;
-    word-wrap: break-word;
-    background-color: var(--quaternary);
-    height: 30em;
-    background-size: cover;
-}
 
-.feat-ven-description-right {
-    display: flex;
-    width: auto;
-    height: 15em;
-    padding-right: 5em;
-    align-items: center;
-    text-align: justify;
-}
+    /* ===START Featured Vendors Styles=== */
+    #light-grey-container {
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        padding: 7em 5% 7em 5%;
+        word-wrap: break-word;
+        background-color: var(--tertiary);
+        height: 30em;
+        background-size: cover;
+    }
 
-/* END Featured VENDORS Section Styles */
+    .feat-ven {
+        display: contents;
+    }
 
-/* START Featured PRODUCTS Section Styles */
+    .feat-ven-description-left {
+        display: flex;
+        width: auto;
+        height: 15em;
+        padding-left: 5em;
+        align-items: center;
+        text-align: justify;
+    }
 
-/* TODO: Need Help moving the circles to the middle, and moving the featured products titile to the center */
-h2 {
-    display: flex;
+    .feat-ven-photo {
+        width: 16em;
+        height: 16em;
+        border-radius: 24px;
+    }
 
-}
+    #dark-grey-container {
+        display: flex;
+        margin-left: 10%;
+        margin-right: 10%;
+        width: auto;
+        padding: 7em 5% 7em 5%;
+        word-wrap: break-word;
+        background-color: var(--quaternary);
+        height: 30em;
+        background-size: cover;
+    }
 
-#feat-prod-circles {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    .feat-ven-description-right {
+        display: flex;
+        width: auto;
+        height: 15em;
+        padding-right: 5em;
+        align-items: center;
+        text-align: justify;
+    }
 
-}
+    /* ===END Featured Vendors Styles=== */
 
-#feat-prod-circles img {
-    width: 15em;
-    height: 15em;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -o-border-radius: 50%;
-    padding: .5em;
-}
 
-/* END Featured PRODUCTS Styles */
+    /* TODO: Need Help moving the circles to the middle, and moving the featured products titile to the center */
+    /* ===START Featured Products Styles=== */
+    h2 {
+        display: flex;
 
-/* END HOMEPAGE STYLES */
+    }
+
+    #feat-prod-circles {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    #feat-prod-circles img {
+        width: 15em;
+        height: 15em;
+        border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        padding: .5em;
+    }
+
+    /* ===END Featured Products Styles=== */
+
+
+/* =======END HOMEPAGE STYLES======= */
+
+
 
 /* =======START STORES Page Styles======= */
 #stores-title {
@@ -339,16 +356,38 @@ h2 {
     font-family: "Roboto", sans-serif;
     margin-bottom: 2em;
 }
-
-.description {
-    margin: 10px;
-}
-
-
 /* =======END STORES Page Styles======= */
 
 
-/* Footer Nav Bar Styles Start */
+
+/* =======START PRODUCTS Page Styles======= */
+.description {
+    margin: 10px;
+}
+/* =======END PRODUCTS Page Styles======= */
+
+
+/* =======START CREATE STORE/PRODUCT Section Styles======= */
+.form-to-add {
+    background-color: rgba(92, 92, 92, 0.414);
+    padding: 5em;
+    border-radius: 24px;
+    width: auto;
+    position: relative;
+    margin-bottom: 2em;
+}
+
+label {
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: clamp(.5em, .25em + 10vw, 1em);
+}
+/* =======END CREATE STORE/PRODUCT Section Styles======= */
+
+
+
+/* =======START Footer Section Styles======= */
 footer {
     display: flex;
     justify-content: space-between;
@@ -361,6 +400,7 @@ h3 {
     color: white;
     font-family: "Roboto", sans-serif;
     font-weight: 100;
+    font-size: 16px;
 }
 
 #footer-right-items {
@@ -385,4 +425,56 @@ h3 {
     justify-content: space-between;
 }
 
-/* Footer Nav Bar Styles End */
+/* =======END Footer Section Styles======= */
+
+
+
+/* =======START Media Queries======= */
+@media(max-width: 600px) {
+    .cta-items p {
+        margin: 18px;
+        text-align: center;
+    }
+
+    #button-container {
+        display: flex;
+        align-items: center;
+        row-gap: 1em;
+        width: fit-content;
+        margin: .2em 0 .4em 0;
+        padding: 0;
+    }
+
+    #button-container a button {
+        width: 100%;
+        align-items: center;
+    }
+
+    .feat-ven {
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        align-items: center;
+    }
+
+    .feat-ven-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .feat-ven-photo {
+        margin-bottom: 1em;
+    }
+
+    #light-grey-container, #dark-grey-container {
+        padding: 1em 5% 1em 5%;
+        height: auto;
+    }
+
+    .feat-ven-description-left, .feat-ven-description-right {
+        height: auto;
+        padding: 0;
+    }
+
+}
+/* =======END Media Queries======= */
