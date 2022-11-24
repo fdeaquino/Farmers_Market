@@ -4,6 +4,7 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const isVendor = document.querySelector('#is-vendor-signup').value.trim();
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
@@ -16,7 +17,7 @@ async function signupFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/homepage');
             console.log('success');
         } else {
             alert(response.statusText);
@@ -42,7 +43,7 @@ async function loginFormHandler(event) {
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace('/homepage');
         } else {
             alert(response.statusText);
         }
