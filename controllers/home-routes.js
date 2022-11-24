@@ -1,8 +1,11 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    // specifies that we want to render/use the homepage.handlebars template
-    res.render('homepage');
+  // specifies that we want to render/use the homepage.handlebars template
+  res.render('homepage',
+    { 
+      loggedIn: req.session.loggedIn 
+    });
 });
 
 // router.get('/', (req, res) => {
@@ -19,11 +22,11 @@ router.get('/', (req, res) => {
 //     });
 // });
 
-router.get('/login',(req,res) => {
+router.get('/login', (req, res) => {
   res.render('login');
 });
-  
-router.get('/sign-up',(req,res) => {
+
+router.get('/sign-up', (req, res) => {
   res.render('sign-up');
 });
 
