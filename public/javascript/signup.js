@@ -4,8 +4,15 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    const isVendor = document.querySelector('#is-vendor-signup').checked;
+    const is_vendor = document.querySelector('#is-vendor-signup').checked;
 
+    console.log(username, email, password, is_vendor);
+    console.log(JSON.stringify({
+        username,
+        email,
+        password,
+        is_vendor
+    }));
 
     if (username && email && password) {
         const response = await fetch('/api/users', {
@@ -14,13 +21,13 @@ async function signupFormHandler(event) {
                 username,
                 email,
                 password,
-                 isVendor
+                is_vendor
             }),
             headers: { 'Content-Type': 'application/json' }
         });
 
         if (response.ok) {
-            document.location.replace('/dashboard');
+            document.location.replace('/');
             console.log('success');
         } else {
             alert(response.statusText);
