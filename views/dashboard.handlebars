@@ -12,7 +12,7 @@
         <p class="section-heading">CREATE</p>
         <div class="row">
             <div class="col create-btns">
-                <a class="description view-store-button" href="#"><button>Create New Store</button></a>
+                <a class="description view-store-button" href="/stores/"><button>Create New Store</button></a>
                 <a class="description view-store-button" href="#"><button>Create New Product</button></a>
             </div>
         </div>
@@ -20,7 +20,29 @@
 </section>
 
 <!-- USER'S STORES SECTION -->
+{{#if stores.length}}
 <section class="large-light-green-container">
+    <div class="container">
+        {{#each stores as |store|}}
+        <p class="section-heading">YOUR STORES</p>
+        <div class="col store-info">
+            {{!-- TODO: Render a user's Store Photo --}}
+            <img class="description store-img" src="">
+            <p class="description">Store Name: {{store.store_name}}</p>
+            {{!-- FD: Stopped Here on Wednesday :) --}}
+            {{!-- TODO: Iterate over the categories array to populate store categories --}}
+            <p class="description">Categories: {{store.categories}}</p>
+            <a class="description view-store-button" href="#"><button>View Store</button></a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</section>
+{{/if}}
+
+
+{{!-- ====== Hard Coded Stores - Comment This Out======== --}}
+{{!-- <section class="large-light-green-container">
     <div class="container">
         <p class="section-heading">YOUR STORES</p>
         <div class="row my-stores justify-content-center">
@@ -51,7 +73,9 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
+
+
 
 <!-- USER'S PRODUCTS SECTION -->
 <section class="large-light-green-container">
