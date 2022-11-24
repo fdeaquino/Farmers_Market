@@ -110,8 +110,6 @@ router.post('/login', (req, res) => {
     });
 });
 
-
-
 // log user out
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
