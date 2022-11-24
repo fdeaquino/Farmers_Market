@@ -452,14 +452,29 @@ h3 {
 
     .feat-ven {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        align-items: center;
+    }
+
+    .feat-ven-reverse {
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     .feat-ven-photo {
-        /* align-items: center; */
-        width: 8em;
-        height: 8em;
+        margin-bottom: 1em;
     }
+
+    #light-grey-container, #dark-grey-container {
+        padding: 1em 5% 1em 5%;
+        height: auto;
+    }
+
+    .feat-ven-description-left, .feat-ven-description-right {
+        height: auto;
+        padding: 0;
+    }
+
 }
 /* =======END Media Queries======= */
