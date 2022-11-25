@@ -6,7 +6,7 @@ const { Store, User, Category, StoreCategory, Product, Rating } = require('../mo
 router.get('/', (req, res) => {
     Store.findAll({
         where: {
-            // use this id from the session
+            // TODO: Add session info
         },
         // doublecheck attributes - should we show the store rating?
         attributes: [

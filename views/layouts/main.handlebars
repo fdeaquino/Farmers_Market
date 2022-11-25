@@ -27,14 +27,14 @@
                 </ul>
             </nav>
             <!-- button -->
-            <div id="nav-btns">
+            <div class="row" id="nav-btns">
 
                 {{#if loggedIn}}
-                <a class="login-button" href="/dashboard"><button>Dashboard</button></a>
-                <a class="login-button" href="#"><button>Logout</button></a>
+                <a class="col" href="/dashboard"><button class="login-button">Dashboard</button></a>
+                <a class="col" href="#"><button class="login-button">Logout</button></a>
                 {{else}}
-                <a class="login-button" href="/login"><button>Login</button></a>
-                <a class="login-button" href="/sign-up"><button>Sign Up</button></a>
+                <a class="col" href="/login"><button class="login-button">Login</button></a>
+                <a class="col" href="/sign-up"><button class="login-button">Sign Up</button></a>
                 {{/if}}
             </div>
 
