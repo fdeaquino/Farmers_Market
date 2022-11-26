@@ -155,8 +155,9 @@ button:hover {
         padding: 0px 10% 0px 10%;
         word-wrap: break-word;
         background-color: rgba(0, 157, 119, 0.3);
-        height: 20em;
+        /* height: 20em; */
         background-size: cover;
+        padding-bottom: 10%;
     }
 
     #dark-green-container {
@@ -267,14 +268,18 @@ button:hover {
     /* ===START Featured Products Styles=== */
     h2 {
         display: flex;
-
+        justify-content: center;
+        text-align: center;
+        font-family: "Roboto", sans-serif;
+        letter-spacing: 2.24px;
+        margin: 1em;
     }
 
     #feat-prod-circles {
         display: flex;
         flex-direction: row;
         align-items: center;
-
+        margin-bottom: 2em;
     }
 
     #feat-prod-circles img {
@@ -522,6 +527,21 @@ h3 {
 
     .store-info, .product-info {
         margin-top: 0;
+    }
+
+    #feat-prod-circles {
+        align-items: normal;
+        width: auto;
+        height: auto;
+    }
+
+    #feat-prod-circles img {
+        padding: 0.5em; 
+    }
+
+    .light-green-container {
+        height: auto;
+        padding-bottom: 30%;
     }
 }
 /* =======END Media Queries======= */
