@@ -84,6 +84,9 @@ nav {
 #nav-btns a {
     padding: .3em;
     padding-left: .8em;
+}
+
+#nav-btns {
     justify-content: space-between;
 }
 
@@ -106,6 +109,26 @@ button:hover {
 }
 
 /* =======END Header Styles======= */
+
+
+
+/* =======START LOGIN Page STYLES======= */
+.login-form {
+    background-color: rgba(92, 92, 92, 0.414);
+    padding: 5em;
+    border-radius: 24px;
+    width: auto;
+    position: relative;
+    margin: 2em;
+}
+
+h3 {
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-size: 2em;
+}
+/* =======END LOGIN Page Styles======= */
 
 
 
@@ -188,7 +211,7 @@ button:hover {
     #button-container {
         align-items: center;
         display: flex;
-        gap: 1em;
+        /* gap: 1em; */
         width: 100%;
         justify-content: center;
         margin-bottom: 1em;
@@ -436,7 +459,7 @@ footer {
     background-color: black;
 }
 
-h3 {
+h4 {
     color: white;
     font-family: "Roboto", sans-serif;
     font-weight: 100;
@@ -483,6 +506,11 @@ h3 {
         margin: .2em 0 .4em 0;
         padding: 0;
     } */
+
+    #button-container {
+        gap: 0;
+        justify-content: space-around;
+    }
 
     #button-container a button {
         width: 100%;
@@ -577,6 +605,25 @@ h3 {
 
     .col-3 {
         max-width: none;
+    }
+
+    #nav-btns a {
+        padding: 0 .5em;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #nav-btns a button{
+        width: 100%;
+    }
+
+    .login-form {
+        padding: 1em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        text-align: center;
     }
 }
 /* =======END Media Queries======= */
