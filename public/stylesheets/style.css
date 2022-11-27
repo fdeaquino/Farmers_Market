@@ -72,13 +72,13 @@ nav {
     transition: all 0.3s ease 0s;
 }
 
-.nav-links li a:hover {
-    color: var(--secondary);
+h1 a:hover, .nav-links li a:hover {
+    color: var(--primary);
 }
 
 #header-right-items {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 #nav-btns a {
@@ -264,7 +264,7 @@ h3 {
     .feat-ven-photo {
         width: 16em;
         height: 16em;
-        border-radius: 24px;
+        border-radius: 70px;
     }
 
     #dark-grey-container {
@@ -598,7 +598,7 @@ h4 {
         padding: 1em 5% 1em 5%;
     }
 
-    #hero, .light-green-container, #light-grey-container, #dark-grey-container, .large-light-green-container {
+    #hero, .light-green-container, #light-grey-container, #dark-grey-container, .large-light-green-container, .store-light-green-container {
         margin-left: auto;
         margin-right: auto;
     }
