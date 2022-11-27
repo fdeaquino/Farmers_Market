@@ -113,7 +113,7 @@ button:hover {
 
 
 /* =======START LOGIN Page STYLES======= */
-.login-form {
+.login-form, .signup-form {
     background-color: rgba(92, 92, 92, 0.414);
     padding: 5em;
     border-radius: 24px;
@@ -127,6 +127,10 @@ h3 {
     font-family: "Roboto", sans-serif;
     font-weight: 100;
     font-size: 2em;
+}
+
+#sign-up-checkbox {
+    margin-left: .35em;
 }
 /* =======END LOGIN Page Styles======= */
 
@@ -617,7 +621,7 @@ h4 {
         width: 100%;
     }
 
-    .login-form {
+    .login-form, .signup-form {
         padding: 1em;
     }
 
