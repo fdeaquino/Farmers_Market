@@ -7,6 +7,7 @@ router.get('/', (req, res) => {
     Store.findAll({
         where: {
             // TODO: Add session info
+            user_id: req.session.user_id
         },
         // doublecheck attributes - should we show the store rating?
         attributes: [
@@ -40,6 +41,10 @@ router.get('/', (req, res) => {
         res.status(500).json(err)
     });
     
+});
+
+router.get('/add-store', (req, res) => {
+    res.render('add-store');
 });
 
 
