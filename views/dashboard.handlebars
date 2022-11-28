@@ -30,8 +30,9 @@
                 {{!-- // TODO: Render a user's Store Photo --}}
                 <img class="description store-img" src="/images/black-square.jpeg">
                 <p class="description">Store Name: <span class="my-store-products">{{store.store_name}}</span></p>
-                {{!-- // TODO: [Get the store's category id] ---- Iterate over the categories array to populate store categories --}}
-                <p class="description">Categories: <span class="my-store-products">{{storeCategory.category_id.category_name}}</span></p>
+                {{#each store.categories as |category|}}
+                <p class="description">Categories:  <span class="my-store-products">{{category.category_name}}</span></p>
+                {{/each}}
                 <a class="description" href="#"><button>View Store</button></a>
             </div>
             {{/each}}

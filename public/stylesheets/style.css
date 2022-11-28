@@ -388,7 +388,7 @@ h3 {
     margin-top: 2em;
     margin-bottom: 2em;
     padding: .5em;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
 }
 /* =======END STORES Page Styles======= */
