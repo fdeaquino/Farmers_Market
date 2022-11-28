@@ -33,3 +33,43 @@
                 <a class="col" href="/dashboard"><button class="login-button">Dashboard</button></a>
                 <a class="col"><button id="logout" class="login-button">Logout</button></a>
                 {{else}}
+                <a class="col" href="/login"><button class="login-button">Login</button></a>
+                <a class="col" href="/sign-up"><button class="login-button">Sign Up</button></a>
+                {{/if}}
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        {{{ body }}}
+    </main>
+    <!-- footer -->
+    <footer>
+        <!-- created by info -->
+        <h4>Made with ❤️ by Alecia, Ryan and Fidel</h4>
+        <div id="footer-right-items">
+            <nav>
+                <ul class="footer-nav-links">
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="#">Social Media</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
+</body>
+
+</html>
