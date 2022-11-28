@@ -210,6 +210,8 @@ h3 {
         font-size: clamp(.5em, .25em + 10vw, 1em);
         display: flex;
         text-align: center;
+        font-weight: 300;
+        flex-direction: column;
     }
 
     #button-container {
@@ -228,9 +230,13 @@ h3 {
         background-color: black;
     }
 
-    /* #login-button, #sign-up-button {
-        font-size: xx-large;
-    } */
+    #cta-big-bold {
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: clamp(.9em, .25em + 10vw, 1.5em);
+        display: flex;
+        text-align: center;
+        font-weight: 600;
+    }
 
     /* ===END CTA Section Styles=== */
 
