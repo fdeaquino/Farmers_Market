@@ -639,5 +639,13 @@ h4 {
     .login-form, .signup-form {
         margin: 2em 0;
     }
+
+    footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer-nav-links a {
+        padding: 0 1em;
+    }
 }
 /* =======END Media Queries======= */
