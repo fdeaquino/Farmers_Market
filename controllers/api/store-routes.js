@@ -35,7 +35,11 @@ router.get('/', (req, res) => {
             }
         ]
     })
-        .then(dbPostData => res.json(dbPostData))
+        // .then(dbPostData => res.json(dbPostData))
+        .then(dbPostData => {
+            const allStores = dbPostData.map(store => store.get({ plain: true }));
+            res.render('allstores', { allStores })
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
