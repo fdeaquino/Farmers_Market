@@ -14,7 +14,11 @@ router.get('/', (req, res) => {
             { model: Store }
         ]
     })
-        .then(dbProductData => res.json(dbProductData))
+        // .then(dbProductData => res.json(dbProductData))
+        .then(dbProductData => {
+            const allProducts = dbProductData.map(product => product.get({ plain: true }));
+            res.render('allproducts', { allProducts})
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
