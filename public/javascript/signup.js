@@ -6,14 +6,6 @@ async function signupFormHandler(event) {
     const password = document.querySelector('#password-signup').value.trim();
     const is_vendor = document.querySelector('#is-vendor-signup').checked;
 
-    console.log(username, email, password, is_vendor);
-    console.log(JSON.stringify({
-        username,
-        email,
-        password,
-        is_vendor
-    }));
-
     if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
