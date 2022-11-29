@@ -63,9 +63,11 @@ router.get('/add-store', withAuth, (req, res) => {
 
 });
 
+
 router.get('/add-product', withAuth, (req, res) => {
     res.render('add-product', { loggedIn: true });
 });
+
 
 
 module.exports = router;
