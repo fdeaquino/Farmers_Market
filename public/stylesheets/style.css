@@ -670,5 +670,9 @@ h4 {
         display: flex;
         justify-content: center;
     }
+
+    h1 a {
+        font-size: 27px;
+    }
 }
 /* =======END Media Queries======= */
