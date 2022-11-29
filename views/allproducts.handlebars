@@ -17,8 +17,8 @@
             <div class="col-6 col-sm-3 product-info">
                 <img class="description product-img" src="/images/black-square.jpeg" alt="">
                 <p class="description">Procuct Name: <br><span class="my-store-products">{{product.product_name}}</span></p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
+                <p class="description">Description: <br><span class="my-store-products">{{product.product_description}}</span></p>
+                <p class="description">Store:<br><a href="/dashboard/store-products/{{product.store_id}}"><span class="my-store-products">{{product.store.store_name}}</span></a></p>
                 {{!-- //TODO: Currently, the category section isn't displaying because there aren't any categories tied to the product. Need to get the store's category instead --}}
                 {{#each product.categories as |category|}}
                 <p class="description">Categories: <br><span class="my-store-products">{{category.category_name}}</span></p>
