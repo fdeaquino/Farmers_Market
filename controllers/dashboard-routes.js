@@ -72,15 +72,15 @@ router.get('/add-product', withAuth, (req, res) => {
             user_id: req.session.user_id
         }
     })
-    .then(dbStoreData => {
-        // serialize data before passing to template
-        const stores = dbStoreData.map(store => store.get({ plain: true }));
-        res.render('add-product', { stores, loggedIn: true });
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err)
-    });
+        .then(dbStoreData => {
+            // serialize data before passing to template
+            const stores = dbStoreData.map(store => store.get({ plain: true }));
+            res.render('add-product', { stores, loggedIn: true });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
 
 
     // res.render('add-product', { loggedIn: true });
@@ -88,7 +88,32 @@ router.get('/add-product', withAuth, (req, res) => {
 
 
 });
+router.get('/store-products/:id', withAuth, (req, res) => {
+
+    Store.findByPk(req.params.id, {
+        include: [            {
+            model: Product,
+            attributes: ['product_name', 'product_description' ],
+            include: {
+                model: Store,
+                attributes: ['store_name']
+            }
+        },]
+    })
+        
+        .then(dbStoreData => {
+            // serialize data before passing to template
+            const store =  dbStoreData.get({ plain: true });
+            console.log(store);
+            const allProducts = store.products || [];
+            res.render('allproducts', { allProducts, loggedIn: true });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err)
+        });
+    });
 
 
 
-module.exports = router;
+    module.exports = router;
