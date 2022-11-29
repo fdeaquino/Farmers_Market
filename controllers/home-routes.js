@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 
 const { Store, Category, StoreCategory, Product, Rating } = require('../models');
 
@@ -38,7 +39,8 @@ router.get('/stores', (req, res) => {
     attributes: [
       'id',
       'store_name',
-      'store_description'
+      'store_description',
+      [sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'), 'rating_count']
     ],
     include: [
       {
@@ -56,6 +58,7 @@ router.get('/stores', (req, res) => {
       }
     ]
   })
+    // .then(dbStoreData => res.json(dbStoreData))
     .then(dbStoreData => {
       // serialize data before passing to template
       const stores = dbStoreData.map(store => store.get({ plain: true }));

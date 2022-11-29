@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'store_name',
-            'store_description'
+            'store_description',
+            [sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'), 'rating_count']
         ],
         include: [
             {
