@@ -1,10 +1,13 @@
 const router = require('express').Router();
 
+const { Store, Category, StoreCategory, Product, Rating } = require('../models');
+
+
 router.get('/', (req, res) => {
   // specifies that we want to render/use the homepage.handlebars template
   res.render('homepage',
-    { 
-      loggedIn: req.session.loggedIn 
+    {
+      loggedIn: req.session.loggedIn
     });
 });
 
@@ -28,6 +31,40 @@ router.get('/login', (req, res) => {
 
 router.get('/sign-up', (req, res) => {
   res.render('sign-up');
+});
+
+router.get('/stores', (req, res) => {
+  Store.findAll({
+    attributes: [
+      'id',
+      'store_name',
+      'store_description'
+    ],
+    include: [
+      {
+        model: Product,
+        attributes: ['product_name'],
+        include: {
+          model: Store,
+          attributes: ['store_name']
+        }
+      },
+      {
+        model: Category,
+        through: StoreCategory,
+        as: 'categories'
+      }
+    ]
+  })
+    .then(dbStoreData => {
+      // serialize data before passing to template
+      const stores = dbStoreData.map(store => store.get({ plain: true }));
+      res.render('allstores', { stores, loggedIn: true });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err)
+    });
 });
 
 module.exports = router;

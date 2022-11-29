@@ -43,9 +43,5 @@ router.get('/', (req, res) => {
     
 });
 
-router.get('/add-store', (req, res) => {
-    res.render('add-store');
-});
-
 
 module.exports = router;
