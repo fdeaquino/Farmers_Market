@@ -8,7 +8,7 @@
     </div>
 </section>
 
-<!-- Individual Stores -->
+<!-- All Stores -->
 {{!-- //TODO: Currently, only three stores populate in handlebars. What's going on with the other three stores? --}}
 {{#if stores.length}}
 <section class="large-light-green-container">
@@ -19,11 +19,17 @@
                 <img class="description store-img" src="/images/black-square.jpeg" alt="">
                 <p class="description">Store Name: <br><span class="my-store-products">{{store.store_name}}</span></p>
                 {{!-- //TODO: Currently the Categories displays an object. Get it to display actual categories. --}}
+                <p class="description">Points: <br><span class="my-store-products">{{rating_count}}</span></p>
                 <p class="description">Categories: 
                 {{#each store.categories as |category|}}
                 <br><span class="my-store-products">{{category.category_name}}</span>
                 {{/each}}
                 </p>
+
+                
+                
+                {{!-- //TODO: Why doesn't the upvote button center like the other store-info items? --}}
+                {{!-- <button class="description" type="button">Upvote</button> --}}
                 <a class="description" href="#"><button>View Store</button></a>
             </div>
             {{/each}}
@@ -31,3 +37,5 @@
     </div>
 </section>
 {{/if}}
+
+<script src="/javascript/upvote.js"></script>

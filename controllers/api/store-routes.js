@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Store, User, Comment, Category, StoreCategory, Product, Rating } = require('../../models');
+const sequelize = require('../../config/connection');
+
 
 // get all stores
 router.get('/', (req, res) => {
@@ -8,6 +10,7 @@ router.get('/', (req, res) => {
             'id',
             'store_name',
             'store_description',
+            [sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'), 'rating_count']
         ],
         // order: [['created_at', 'DESC']],
         include: [
@@ -56,6 +59,7 @@ router.get('/:id', (req, res) => {
             'id',
             'store_name',
             'store_description',
+            [sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'), 'rating_count']
         ],
         // order: [['created_at', 'DESC']],
         include: [

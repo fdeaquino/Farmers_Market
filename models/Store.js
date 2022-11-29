@@ -18,7 +18,7 @@ class Store extends Model {
                     'store_description',
                     [
                     sequelize.literal('(SELECT COUNT(*) FROM rating WHERE store.id = rating.store_id)'),
-                    'vote_count'
+                    'rating_count'
                     ]
                 ]
             });
