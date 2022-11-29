@@ -411,6 +411,11 @@ h3 {
     font-weight: 100;
     text-decoration: underline;
 }
+
+.store-link {
+    color: rgba(0, 157, 119, 1);
+    text-decoration: none;
+}
 /* =======END PRODUCTS Page Styles======= */
 
 
@@ -541,6 +546,10 @@ h4 {
         margin-bottom: 1em;
     }
 
+    .circle-images img {
+        width: 30%;
+    }
+
     .store-light-green-container {
         height: 10em;
     }
@@ -646,6 +655,20 @@ h4 {
 
     .footer-nav-links a {
         padding: 0 1em;
+    }
+
+    .logo-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .circle-images img {
+        width: 15em;
+    }
+
+    .circle-images {
+        display: flex;
+        justify-content: center;
     }
 }
 /* =======END Media Queries======= */

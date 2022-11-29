@@ -127,6 +127,7 @@ router.post('/', (req, res) => {
 router.put('/upvote', (req, res) => {
     if (req.session) {
         // pass session id along with all destructured properties on req.body
+        console.log(req.session.user_id);
         Store.upvote({ ...req.body, user_id: req.session.user_id }, { Rating, Comment, User })
             .then(updatedRatingData => res.json(updatedRatingData))
             .catch(err => {
