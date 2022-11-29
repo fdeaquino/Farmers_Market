@@ -65,7 +65,28 @@ router.get('/add-store', withAuth, (req, res) => {
 
 
 router.get('/add-product', withAuth, (req, res) => {
-    res.render('add-product', { loggedIn: true });
+
+    Store.findAll({
+        where: {
+            // TODO: Add session info
+            user_id: req.session.user_id
+        }
+    })
+    .then(dbStoreData => {
+        // serialize data before passing to template
+        const stores = dbStoreData.map(store => store.get({ plain: true }));
+        res.render('add-product', { stores, loggedIn: true });
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err)
+    });
+
+
+    // res.render('add-product', { loggedIn: true });
+
+
+
 });
 
 

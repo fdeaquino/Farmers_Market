@@ -18,13 +18,11 @@
                 <input type="text" class="form-control" id="product_name" placeholder="Product Name">
             </div>
             <div class="form-group">
-                <label for="product_categories">SELECT A PRODUCT CATEGORY</label>
-                <select multiple class="form-control" id="product_categories">
-                    <option>Vegetables</option>
-                    <option>Fruits</option>
-                    <option>Meats</option>
-                    <option>Eggs</option>
-                    <option>Other</option>
+                <label for="product_categories">SELECT THE STORE FOR YOUR PRODUCT</label>
+                <select class="form-control" id="product_categories">
+                    {{#each stores as |store|}}
+                    <option value="{{id}}">{{store_name}}</option>
+                    {{/each}}  
                 </select>
             </div>
             <div class="form-group">
