@@ -32,10 +32,10 @@
                 {{!-- // TODO: Render a user's Store Photo --}}
                 <img class="description store-img" src="/images/black-square.jpeg">
                 <p class="description">Store Name: <span class="my-store-products">{{store.store_name}}</span></p>
-                <p class="description">Categories:  
+                <p class="description">Categories:
                     {{#each store.categories as |category|}}
-                <span class="my-store-products">{{category.category_name}}</span>
-                {{/each}}
+                    <span class="my-store-products">{{category.category_name}}</span>
+                    {{/each}}
                 </p>
                 <a class="description" href="#"><button>View Store</button></a>
             </div>
@@ -46,18 +46,41 @@
 {{/if}}
 
 
-{{!-- // TODO: Currently thhe product's section doesn't populate any products because the products object can't be found --}}
+{{!-- // TODO: Currently thhe product's section doesn't populate any products because the products object can't be found
+--}}
 <!-- USER'S PRODUCTS SECTION -->
+
+<section class="large-light-green-container">
+    <div class="container">
+        <p class="section-heading">YOUR PRODUCTS</p>
+        <div class="row justify-content-center my-products">
+            {{!-- // TODO: get the product object's properties -- product_name, store_name, categories --}}
+            {{#each stores as |store|}}
+            {{#each store.products as |product|}}
+            <div class="col-6 col-sm-3 product-info">
+                <img class="description product-img" src="/images/black-square.jpeg">
+                <p class="description">Product Name: <span class="my-store-products">{{product_name}}</span></p>
+                <p class="description">Store: <span>{{store.store_name}}</span></p>
+                <a class="description" href="#"><button>View Product</button></a>
+            </div>
+            {{/each}}
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+
+{{!-- THE BELOW CODE IS NOT NEEDED AND DOES NOT WORK --}}
 {{#if products.length}}
 <section class="large-light-green-container">
     <div class="container">
         <p class="section-heading">YOUR PRODUCTS</p>
         <div class="row justify-content-center my-products">
             {{!-- // TODO: get the product object's properties -- product_name, store_name, categories --}}
-            {{#each products as |product|}}
+            {{#each store.products as |product|}}
             <div class="col-6 col-sm-3 product-info">
                 <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: <span class="my-store-products">{{product.product_name}}</span></p>
+                <p class="description">wfqwfrProcuct Name: <span class="my-store-products">{{product_name}}</span></p>
                 <p class="description">$__</p>
                 <p class="description">Store:</p>
                 <p class="description">Categories: <span class="my-store-products">{{product.categories}}</span></p>
@@ -68,139 +91,3 @@
     </div>
 </section>
 {{/if}}
-
-{{!-- ======== Hard Coded Stores - Comment This Out ======== --}}
-{{!-- <section class="large-light-green-container">
-    <div class="container">
-        <p class="section-heading">YOUR STORES</p>
-        <div class="row my-stores justify-content-center">
-            <div class="col-6 store-info">
-                <img class="description store-img" src="/images/black-square.jpeg" alt="">
-                <p class="description">Store Name:</p>
-                <p class="description">Categories:</p>
-                <a class="description" href="#"><button>View Store</button></a>
-            </div>
-            <div class="col-6 store-info">
-                <img class="description store-img" src="/images/black-square.jpeg" alt="">
-                <p class="description">Store Name:</p>
-                <p class="description">Categories:</p>
-                <a class="description" href="#"><button>View Store</button></a>
-            </div>
-
-            <div class="col-6 store-info">
-                <img class="description store-img" src="/images/black-square.jpeg" alt="">
-                <p class="description">Store Name:</p>
-                <p class="description">Categories:</p>
-                <a class="description" href="#"><button>View Store</button></a>
-            </div>
-            <div class="col-6 store-info">
-                <img class="description store-img" src="/images/black-square.jpeg" alt="">
-                <p class="description">Store Name:</p>
-                <p class="description">Categories:</p>
-                <a class="description" href="#"><button>View Store</button></a>
-            </div>
-        </div>
-    </div>
-</section> --}}
-
-
-
-{{!-- ======== Hard Coded Products - Comment Them Out ======== --}}
-<section class="large-light-green-container">
-    <div class="container">
-        <p class="section-heading">YOUR PRODUCTS</p>
-        <div class="row justify-content-center my-products">
-            {{!-- // TODO: get the product object's properties -- product_name, store_name, categories --}}
-            <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-             <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">Procuct Name: </p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: </p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
