@@ -101,7 +101,10 @@ router.post('/', (req, res) => {
         "categoryIds": [1,7]
       }
     */
-    Store.create(req.body)
+    Store.create({
+        ...req.body,
+        user_id: req.session.user_id
+    })
         .then((store) => {
             if (req.body.categoryIds.length) {
                 const storeCategoryIdArr = req.body.categoryIds.map((category_id) => {
