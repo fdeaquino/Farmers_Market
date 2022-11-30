@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
         // .then(dbProductData => res.json(dbProductData))
         .then(dbProductData => {
             const allProducts = dbProductData.map(product => product.get({ plain: true }));
-            res.render('allproducts', { allProducts})
+            res.render('allproducts', { allProducts, loggedIn:true})
         })
         .catch(err => {
             console.log(err);
