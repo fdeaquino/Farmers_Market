@@ -4,6 +4,7 @@ const seedStore = require('./store-seeds');
 const seedUsers = require('./user-seeds');
 const seedComments = require('./comment-seeds');
 const seedRatings = require('./ratings-seeds');
+const seedStoreCategory = require('./store-category-seeds')
 
 const sequelize = require('../config/connection');
 
@@ -22,6 +23,8 @@ const seedAll = async () => {
     console.log('comments seeded!');
     await seedRatings();
     console.log('ratings seeded!');
+    await seedStoreCategory();
+    console.log('store categories seeded!');
     process.exit(0);
     
 };

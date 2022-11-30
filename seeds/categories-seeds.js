@@ -1,25 +1,30 @@
 
-const {Category}  = require('../models');
+const { Category } = require('../models');
 
 const categoryData = [
   {
-        id: 1,
-        category_name: 'Vegetables'
-        // store_id: 1  
+    category_name: 'Vegetables'
   },
   {
-       id: 2,
-         category_name: 'Fruits'
-            // store_id: 2
-    }
-    ,
-    {
-        id: 3,
-        category_name: 'Meats'
-        // store_id: 3
-    }
-  ];
-       
+    category_name: 'Fruits'
+  },
+  {
+    category_name: 'Meats'
+  },
+  {
+    category_name: 'Clothing'
+  },
+  {
+    category_name: 'Furniture'
+  },
+  {
+    category_name: 'Crockery'
+  },
+  {
+    category_name: 'Candles'
+  }
+];
+
 const seedCategories = () => Category.bulkCreate(categoryData);
 
 module.exports = seedCategories;
