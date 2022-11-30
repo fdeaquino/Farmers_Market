@@ -71,24 +71,3 @@
 </section>
 
 
-{{!-- THE BELOW CODE IS NOT NEEDED AND DOES NOT WORK --}}
-{{#if products.length}}
-<section class="large-light-green-container">
-    <div class="container">
-        <p class="section-heading">YOUR PRODUCTS</p>
-        <div class="row justify-content-center my-products">
-            {{!-- // TODO: get the product object's properties -- product_name, store_name, categories --}}
-            {{#each store.products as |product|}}
-            <div class="col-6 col-sm-3 product-info">
-                <img class="description product-img" src="/images/black-square.jpeg">
-                <p class="description">wfqwfrProcuct Name: <span class="my-store-products">{{product_name}}</span></p>
-                <p class="description">$__</p>
-                <p class="description">Store:</p>
-                <p class="description">Categories: <span class="my-store-products">{{product.categories}}</span></p>
-                <a class="description" href="#"><button>View Procuct</button></a>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-</section>
-{{/if}}

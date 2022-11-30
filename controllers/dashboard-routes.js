@@ -94,7 +94,7 @@ router.get('/store-products/:id', withAuth, (req, res) => {
     Store.findByPk(req.params.id, {
         include: [            {
             model: Product,
-            attributes: ['product_name', 'product_description' ],
+            attributes: ['product_name', 'product_description', 'store_id' ],
             include: {
                 model: Store,
                 attributes: ['store_name']
