@@ -1,80 +1,52 @@
 # Farmers Market
+Byte Farmer's Market is a digital platform that connects customers with vendors of their local farmer's market. We aim to provide small business owners an opportunity to expand their reach and connect with new customers. By using our platform, users can easily discover local vendors and preview the products they have available for purchase online.
 
-  ## Table of Contents
-  * [Description](#description)
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [Contributing](#contributing)
-  * [Tests](#tests)
-  * [Questions](#questions)
-  * [License](#license)
-  * [Credits](#credits) 
+ ## Table of Contents
+  - [Screenshot](#screenshot)
+  - [Deployed Site](#deployed-site)
+  - [User Story](#user-story)
+  - [Installation](#installation)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-  ## Description
-  As a business owner I want to be able to view and manage departments, roles, and employees in my company so that I can organize and plan my business.
-  ## Installation
-##  
-    This application need node.js, please refer to offical website for installation
-Download this repo by running
-##
-    git clone https://github.com/#UserName/farmers_market.git
-This application also needs you to install mysql on your computer. 
-##
-    Please refer to mysql website for installation
-    Change password in index.js to your root user password of your mysql DBMS.
-Install required node pacakges by running
-##
-    npm install
-Create schema of database tables by:
-## 
-    Running all the queries in schema.sql
-    Set up test records yourself or run queries in seed.sql
-Start the application by running
-##    
-    node index or npm start
+## Screenshot
+![Screenshot](./public/images/byte-farmers-market.png)
 
-  ## Usage
-When I open the web page
-Then I am given the option to create an account or sign in
-When I select the option to create an account
-Then I see the following:
-  ## 
-      Name
-      Email
-      Password
-      Checkbox to create vendor profile
-      Button to submit
-When I create a vendor profile
-Then I am taken to a page to create a store and add products
-##
-    Enter store name and save
-    Enter store description and save
-    Add individual products
-    Potentially, add each product one by one
+## Deployed Site
+[Click here to open Byte Farmer's Market](https://byte-farmers-market.herokuapp.com/)
 
-When “add a new product” is clicked 
-##
-    The one just entered is saved and a new entry box appears to enter a new product
+## User Story
+  - AS A small business owner at a farmers market
+  - I WANT to be able to create a store with associated products
+  - SO THAT I can easily reach more community members as potential customers
 
-  ## Contributing
- ## 
-    Alecia, Fidel, and Ryan
+  - AS A potential customer at a farmers market
+  - I WANT to be able to view stores and their products
+  - SO THAT I can make an informed purchase and support local businesses in my community
 
   
-  ## Tests
-##
-    Tests
+## Installation
+Installation is not required to use Byte Farmer's Market. If you would like to run our app on your local machine, please clone the repo and install dependencies with `npm install` at the root of the project.
 
-  ## Questions
-##  
-    For more information you can reach out to me at @gmail.com 
-    or you can find me on GitHub at https://github.com/@UserName
-    You can demo the app by clicking the following link. #link
-  
-  ## License
-##
-    MIT
- 
-  ## Credits
-##
-    Alecia, Fidel, and Ryan
+## Acceptance Criteria
+  - Use Node.js and Express.js to create a RESTful API
+  - Use Handlebars.js as the templating engine
+  - Use MySQL and the Sequelize ORM for the database
+  - Have both GET and POST routes for retrieving and adding new data
+  - Be deployed using Heroku (with data)
+  - Use at least one new library, package, or technology that we haven’t discussed
+  - Have a polished UI
+  - Be responsive
+  - Be interactive (i.e., accept and respond to user input)
+  - Have a folder structure that meets the MVC paradigm
+  - Include authentication (express-session and cookies)
+  - Protect API keys and sensitive information with environment variables
+  - Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.)
+  - Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application)
+
+## Contributing
+Alecia Maragh, Fidel Deaquino, and Ryan Carroll
+
+## License
+MIT
